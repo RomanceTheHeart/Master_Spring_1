@@ -4,7 +4,7 @@ import com.example.beans.Vehicle;
 import com.example.config.ProjectConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-public class Example_3 {
+public class Example_4 {
     public static void main(String[] args) {
 // This object is not tracked inside the spring context.
         //this line is responsible for initializing  and keeping track of all the beans.
@@ -17,6 +17,8 @@ public class Example_3 {
 
         Vehicle vehicle = context.getBean("Rich",Vehicle.class);
         vehicle.PrintVehicleName(vehicle.getName());
+        context.close();
+
 
 
         /*
