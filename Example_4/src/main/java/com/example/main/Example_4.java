@@ -1,5 +1,6 @@
 package com.example.main;
 
+import com.example.beans.Person;
 import com.example.beans.Vehicle;
 import com.example.config.ProjectConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -12,11 +13,12 @@ public class Example_4 {
 
         var context = new AnnotationConfigApplicationContext(ProjectConfig.class);
 
-        Vehicle veh = context.getBean(Vehicle.class);
+       Vehicle veh = context.getBean(Vehicle.class);
         veh.PrintVehicleName(veh.getName());
-
         Vehicle vehicle = context.getBean("Rich",Vehicle.class);
         vehicle.PrintVehicleName(vehicle.getName());
+        Person person  = context.getBean(Person.class);
+        System.out.println( person + " got a " + veh);
         context.close();
 
 
