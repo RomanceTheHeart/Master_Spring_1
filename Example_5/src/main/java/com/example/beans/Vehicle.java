@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 public class Vehicle {
 
         public String getName() {
-            return name;
+            return this.name;
         }
 
         public void setName(String name) {
@@ -24,8 +24,12 @@ public class Vehicle {
             System.out.println("You chose " + name);
 
 
+            }
 
-        }
+    @Override
+    public String toString() {
+        return name;
+    }
 
 
     }

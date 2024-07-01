@@ -13,11 +13,13 @@ public class Example_5 {
 
         var context = new AnnotationConfigApplicationContext(ProjectConfig.class);
 
-       Vehicle veh = context.getBean(Vehicle.class);
-        veh.PrintVehicleName(veh.getName());
+        Vehicle veh = context.getBean(Vehicle.class);
         Person person  = context.getBean(Person.class);
+        veh.setName("Buick");
+        veh.PrintVehicleName(veh.getName());
         person.setName("Tom");
-        System.out.println( person.getName() + " got a " + veh.getName());
+        System.out.println( person.getName() + " got a " + person.getVehicle());
+
         context.close();
 
 
